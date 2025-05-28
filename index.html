@@ -107,13 +107,13 @@
     <img src="img/pb.jpg" alt="Profilbild" class="profile-pic">
     <h1>Marvininja</h1>
     <p>Nerd, Visionary & Ninja</p>
-    <a href="javascript:void(0);" onclick="toggleAbout()" class="btn">Über mich</a>
-    <a href="#projekt1" class="btn">Projekt 1</a>
+    <a href="javascript:void(0);" onclick="showSection('aboutSection')" class="btn">Über mich</a>
+    <a href="javascript:void(0);" onclick="showSection('projekt1Section')" class="btn">Projekt 1</a>
     <a href="#projekt2" class="btn">Projekt 2</a>
     <a href="#kontakt" class="btn">Kontakt</a>
     <a href="#cv" class="btn">Lebenslauf</a>
 
-    <div id="aboutSection" class="about-content">
+<div id="aboutSection" class="about-content">
   <h2 style="font-size: 1.4rem; color: #ffd700;">Über mich</h2>
   <p>
     Seit 2017 bin ich in der IT-MSP-Branche als IT-Dienstleister tätig. 2019 übernahm ich die Rolle des Applikationsspezialisten mit Schwerpunkt im RMM-Bereich (Remote Monitoring & Management) und gewann erste Erfahrungen als Führungsperson.
@@ -129,6 +129,20 @@
   </p>
 </div>
 
+<div id="projekt1Section" class="about-content">
+  <h2 style="font-size: 1.4rem; color: #ffd700;">Projekt 1: Automatisiertes Patchmanagement</h2>
+  <p>
+    In meiner Projektarbeit habe ich ein automatisiertes Patchmanagement-System auf Basis von <strong>N-Able N-sight RMM</strong> entwickelt – einer marktführenden Lösung im Bereich Remote Monitoring & Management. 
+  </p>
+  <p>
+    Zuvor wurden alle sicherheitskritischen Updates manuell durchgeführt, um höchste Qualitäts- und Compliance-Standards zu garantieren. Durch gezielte Erweiterung und Umgehung bestehender Limitationen der Plattform konnte ich eine Lösung realisieren, die <strong>vollautomatisiert</strong> die gleichen hohen Standards sicherstellt – bei gleichzeitiger <strong>Reduktion manueller Aufwände auf nahezu null</strong>.
+  </p>
+  <p>
+    Das Ergebnis: mehr Effizienz, weniger Fehlerpotenzial und eine zukunftsfähige Grundlage für skalierbare IT-Services.
+  </p>
+</div>
+
+
     
     <div class="socials">
       <a href="https://github.com/Marvininja" target="_blank">🐙</a>
@@ -137,9 +151,19 @@
     </div>
   </div>
 <script>
-  function toggleAbout() {
-    const section = document.getElementById("aboutSection");
-    section.classList.toggle("open");
+  function showSection(id) {
+    const allSections = ['aboutSection', 'projekt1Section'];
+    allSections.forEach(sectionId => {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.classList.remove('open');
+      }
+    });
+
+    const target = document.getElementById(id);
+    if (target) {
+      target.classList.add('open');
+    }
   }
 </script>
 </body>
