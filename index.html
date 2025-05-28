@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digitale Visitenkarte</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .business-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 24px;
+      max-width: 350px;
+      width: 100%;
+      text-align: center;
+    }
+    .profile-pic {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 16px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #333;
+    }
+    p.title {
+      margin: 4px 0 16px;
+      font-size: 1rem;
+      color: #777;
+    }
+    .contact-info {
+      text-align: left;
+      margin-bottom: 16px;
+    }
+    .contact-info a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+    .social-links a {
+      margin: 0 8px;
+      font-size: 1.25rem;
+      color: #333;
+      text-decoration: none;
+    }
+    .social-links a:hover {
+      color: #0066cc;
+    }
+  </style>
+</head>
+<body>
+  <div class="business-card">
+    <img src="https://via.placeholder.com/100" alt="Profilbild" class="profile-pic">
+    <h1>Max Mustermann</h1>
+    <p class="title">Lead Developer bei care4IT AG</p>
+
+    <div class="contact-info">
+      <p>📞 <a href="tel:+41123456789">+41 12 345 67 89</a></p>
+      <p>✉️ <a href="mailto:max.mustermann@care4it.ch">max.mustermann@care4it.ch</a></p>
+      <p>🌐 <a href="https://www.care4it.ch" target="_blank">www.care4it.ch</a></p>
+    </div>
+
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/max-mustermann" target="_blank" title="LinkedIn">
+        LinkedIn
+      </a>
+      <a href="https://twitter.com/max_muster" target="_blank" title="Twitter">
+        Twitter
+      </a>
+      <a href="https://github.com/maxmustermann" target="_blank" title="GitHub">
+        GitHub
+      </a>
+    </div>
+  </div>
+</body>
+</html>
