@@ -98,6 +98,45 @@
       padding-bottom: 16px;
       opacity: 1;
     }
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+    height: auto;
+    align-items: stretch;
+  }
+
+  .card {
+    width: 100%;
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+
+  .profile-pic {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 8px;
+  }
+
+  .about-content {
+    font-size: 0.95rem;
+  }
+
+  .socials a {
+    font-size: 1.2rem;
+  }
+}
+
+    
   </style>
 </head>
 <body>
@@ -111,7 +150,7 @@
     <a href="javascript:void(0);" onclick="showSection('projekt1Section', event)" class="btn">Projekt 1</a>
     <a href="javascript:void(0);" onclick="showSection('projekt2Section', event)" class="btn">Projekt 2</a>
     <a href="#kontakt" class="btn">Kontakt</a>
-    <a href="#cv" class="btn">Lebenslauf</a>
+    
 
     <!-- Über mich -->
     <div id="aboutSection" class="about-content">
