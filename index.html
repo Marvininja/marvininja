@@ -269,10 +269,10 @@
   <!-- JavaScript -->
 <script>
     function showSection(id, event) {
-      const mainSections = ['arbeitSection', 'lebenSection'];
+      const mainSections = ['arbeitSection', 'lebenSection', 'kontaktSection'];
       const contentSections = ['aboutSection', 'projekt1Section', 'projekt2Section'];
 
-      // Schließe alle Inhalte (aber nicht Kontakt)
+      // Schließe alle Inhalte
       [...mainSections, ...contentSections].forEach(sectionId => {
         const section = document.getElementById(sectionId);
         if (section) section.classList.remove('open');
