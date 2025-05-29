@@ -109,6 +109,28 @@
     margin: 12px 0; /* Abstand zwischen den Punkten */
     line-height: 1.6; /* angenehme Zeilenhöhe */
   } 
+    
+  #lebenSection ul.highlight-list {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+#lebenSection ul.highlight-list li {
+  display: flex;
+  align-items: start;
+  gap: 8px;
+  text-align: left;
+  line-height: 1.5;
+}
+
+#lebenSection ul.highlight-list li::before {
+  content: attr(data-icon);
+  display: inline-block;
+  min-width: 1.5em;
+  font-size: 1.2em;
+}
 
     
 @media (max-width: 480px) {
@@ -147,30 +169,7 @@
   .socials a {
     font-size: 1.2rem;
   }
-  #lebenSection ul.highlight-list {
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 12px;
-}
-
-#lebenSection ul.highlight-list li {
-  display: flex;
-  align-items: start;
-  gap: 8px;
-  text-align: left;
-  line-height: 1.5;
-}
-
-#lebenSection ul.highlight-list li::before {
-  content: attr(data-icon);
-  display: inline-block;
-  min-width: 1.5em;
-  font-size: 1.2em;
-}
-
-
-  
+ 
 }
 
     
