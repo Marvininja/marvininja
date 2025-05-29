@@ -147,7 +147,30 @@
   .socials a {
     font-size: 1.2rem;
   }
+  #lebenSection ul.highlight-list {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
 
+#lebenSection ul.highlight-list li {
+  display: flex;
+  align-items: start;
+  gap: 8px;
+  text-align: left;
+  line-height: 1.5;
+}
+
+#lebenSection ul.highlight-list li::before {
+  content: attr(data-icon);
+  display: inline-block;
+  min-width: 1.5em;
+  font-size: 1.2em;
+}
+
+
+  
 }
 
     
@@ -168,14 +191,15 @@
     <!-- Leben: Interessenbereiche -->
     <div id="lebenSection" class="about-content">
       <h2 class="section-title">Leben</h2>
-      <ul class="highlight-list">
-        <li>📚 <strong>Lernen & Lesen:</strong> Stetige Weiterentwicklung durch Bücher, Artikel & Studien</li>
-        <li>🏃 <strong>Sport:</strong> HIIT-Workout, Laufen, Sprinttraining – Körper und Geist in Bewegung</li>
-        <li>🏍️ <strong>Töff:</strong> Leidenschaft für Motoren, Motorräder & Technik</li>
-        <li>🧠 <strong>Psychologie:</strong> Menschliches Verhalten verstehen, analysieren und reflektieren</li>
-        <li>📖 <strong>Philosophie:</strong> Tiefgang, Sinnsuche und kritisches Denken mit Denkern wie Nietzsche, Descartes, Sartre und meinem Liebling: Jung</li>
-        <li>☦️ <strong>Religion:</strong> Christliche Weltanschauung, Glaube als Lebensanker und Orientierung</li>
-      </ul>
+        <ul class="highlight-list">
+          <li data-icon="📚"><strong>Lernen & Lesen:</strong> Stetige Weiterentwicklung durch Bücher, Artikel & Studien</li>
+          <li data-icon="🏃"><strong>Sport:</strong> HIIT-Workout, Laufen, Sprinttraining – Körper und Geist in Bewegung</li>
+          <li data-icon="🏍️"><strong>Töff:</strong> Leidenschaft für Motoren, Motorräder & Technik</li>
+          <li data-icon="🧠"><strong>Psychologie:</strong> Menschliches Verhalten verstehen, analysieren und reflektieren</li>
+          <li data-icon="📖"><strong>Philosophie:</strong> Tiefgang, Sinnsuche und kritisches Denken mit Denkern wie Nietzsche, Descartes, Sartre und meinem Liebling: Jung</li>
+          <li data-icon="☦️"><strong>Religion:</strong> Christliche Weltanschauung, Glaube als Lebensanker und Orientierung</li>
+        </ul>
+
     </div>
 
     <!-- Arbeit: Untermenüs und Sektionen -->
