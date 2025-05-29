@@ -267,14 +267,18 @@
   </div>
 
   <!-- JavaScript -->
-  <script>
+<script>
     function showSection(id, event) {
-      const allSections = ['arbeitSection', 'lebenSection', 'kontaktSection', 'aboutSection', 'projekt1Section', 'projekt2Section'];
-      allSections.forEach(sectionId => {
+      const mainSections = ['arbeitSection', 'lebenSection'];
+      const contentSections = ['aboutSection', 'projekt1Section', 'projekt2Section'];
+
+      // Schließe alle Inhalte (aber nicht Kontakt)
+      [...mainSections, ...contentSections].forEach(sectionId => {
         const section = document.getElementById(sectionId);
-        if (section && sectionId !== 'kontaktSection') section.classList.remove('open');
+        if (section) section.classList.remove('open');
       });
 
+      // Zeige den ausgewählten Bereich
       const target = document.getElementById(id);
       if (target) {
         target.classList.add('open');
@@ -283,9 +287,17 @@
         }, 100);
       }
 
+      // Wenn ein Unterpunkt von "Arbeit" gewählt wird, bleibe im "Arbeit"-Bereich
+      if (contentSections.includes(id)) {
+        const arbeitSection = document.getElementById('arbeitSection');
+        if (arbeitSection) arbeitSection.classList.add('open');
+      }
+
+      // Style-Aktualisierung
       document.querySelectorAll('.btn').forEach(btn => btn.classList.remove('active-btn'));
       if (event) event.target.classList.add('active-btn');
     }
-  </script>
+</script>
+
 </body>
 </html>
