@@ -8,115 +8,141 @@
   <link rel="icon" type="image/png" href="img/favicon2.png">
   <link rel="apple-touch-icon" href="img/favicon.png">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      color: #ffd700;
-      background: url('img/bg.jpg') no-repeat center center fixed;
-      background-size: cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      flex-direction: column;
-      text-align: center;
-    }
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: #ffd700;
+  background: url('img/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  text-align: center;
+}
 
-    .card {
-      background-color: rgba(0,0,0,0.5);
-      border-radius: 20px;
-      padding: 20px;
-      width: 90%;
-      max-width: 400px;
-      backdrop-filter: blur(10px);
-    }
+.card {
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 20px;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  backdrop-filter: blur(10px);
+}
 
-    .profile-pic {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 12px;
-    }
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 12px;
+}
 
-    h1 {
-      margin: 0;
-      font-size: 1.5rem;
-    }
+h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
 
-    p {
-      margin: 0.5rem 0 1.5rem;
-      font-size: 1rem;
-      color: #eee;
-    }
+p {
+  margin: 0.5rem 0 1.5rem;
+  font-size: 1rem;
+  color: #eee;
+}
 
-    .btn {
-      display: block;
-      background: transparent;
-      border: 2px solid #ffd700;
-      border-radius: 8px;
-      padding: 10px;
-      margin: 10px auto;
-      width: 80%;
-      text-decoration: none;
-      color: #ffd700;
-      font-weight: 600;
-      transition: background 0.3s, color 0.3s;
-    }
+.btn {
+  display: block;
+  background: transparent;
+  border: 2px solid #ffd700;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px auto;
+  width: 80%;
+  text-decoration: none;
+  color: #ffd700;
+  font-weight: 600;
+  transition: background 0.3s, color 0.3s;
+}
 
-    .btn:hover,
-    .btn.active-btn {
-      background-color: #ffd700;
-      color: black;
-    }
+.btn:hover,
+.btn.active-btn {
+  background-color: #ffd700;
+  color: black;
+}
 
-    .socials {
-      margin-top: 20px;
-    }
+.socials {
+  margin-top: 20px;
+}
 
-    .socials a {
-      margin: 0 10px;
-      color: #ffd700;
-      font-size: 1.5rem;
-      text-decoration: none;
-    }
+.socials a {
+  margin: 0 10px;
+  color: #ffd700;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
 
-    .socials a:hover {
-      color: white;
-    }
+.socials a:hover {
+  color: white;
+}
 
-    .about-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.6s ease-out, padding 0.3s ease, opacity 0.3s ease;
-      padding-top: 0;
-      padding-bottom: 0;
-      opacity: 0;
-    }
+.about-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease-out, padding 0.3s ease, opacity 0.3s ease;
+  padding-top: 0;
+  padding-bottom: 0;
+  opacity: 0;
+}
 
-    .about-content.open {
-      max-height: 1000px;
-      padding-top: 16px;
-      padding-bottom: 16px;
-      opacity: 1;
-    }
-  .highlight-list {
-    padding-left: 0;
-    list-style: none;
-    margin: 12px 0;
-  }
-  
-  .highlight-list li {
-    text-align: left;
-    margin: 12px 0;
-    line-height: 1.6; 
-  } 
+.about-content.open {
+  max-height: 1000px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  opacity: 1;
+}
 
-  .mobile-only {
-    display: none;
-  }
+.highlight-list {
+  padding-left: 0;
+  list-style: none;
+  margin: 12px 0;
+}
 
-  @media (max-width: 480px) {
+.highlight-list li {
+  text-align: left;
+  margin: 12px 0;
+  line-height: 1.6;
+}
+
+.mobile-only {
+  display: none;
+}
+
+/* --- Toast Notification --- */
+.toast {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffd700;
+  color: black;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.toast.show {
+  display: block;
+  opacity: 1;
+}
+
+/* --- Responsive Styles für Mobile --- */
+@media (max-width: 480px) {
   body {
     padding: 10px;
     height: auto;
@@ -158,6 +184,7 @@
   }
 }
 
+
     
   </style>
 </head>
@@ -187,6 +214,30 @@
     <a href="javascript:void(0);" onclick="showSection('auswandernSection', event)" class="btn">🇨🇭 Mein Schritt in die Schweiz</a>
     </div>
 
+    
+        <!-- Auswandern -->
+    <div id="auswandernSection" class="about-content">
+      <h2 class="section-title">Mein Schritt in die Schweiz 🇨🇭</h2>
+      <p>
+        Anfang 2024 habe ich Deutschland verlassen und bin in die Schweiz ausgewandert.
+        Es war lange ein Gedanke, der zu einem Traum wurde und nicht nur ein beruflicher Neuanfang,
+        sondern auch ein bewusster Absprung von einem System, das sich für mich zunehmend wie ein
+        sinkendes Schiff anfühlte.
+      </p>
+      <p>
+        Die gesellschaftliche Entwicklung in Deutschland – geprägt von wachsender Ineffizienz, Bürokratie
+        und Ellenbogenmentalität – stand im starken Kontrast zu dem, was ich in der Schweiz vorfand:
+        ein respektvollerer Umgang, mehr Miteinander und ein funktionierendes Gemeinwesen.
+      </p>
+      <p>
+        Diese gesellschaftliche Qualität ist nicht selbstverständlich. Sie ist ein hohes Gut,
+        das es zu bewahren gilt – denn sie kann schnell verloren gehen, wenn man nicht achtsam bleibt.
+        Ich bin dankbar, hier leben und wirken zu dürfen, und trage gerne meinen Teil dazu bei,
+        dass dieses Miteinander erhalten bleibt.
+      </p>
+    </div>
+
+    
   <!-- Arbeit: Untermenüs und Sektionen -->
   <div id="arbeitSection" class="about-content">
     <h2 class="section-title">Arbeit</h2>
@@ -280,27 +331,9 @@
     
     
 </div>
-<!-- Auswandern -->
-<div id="auswandernSection" class="about-content">
-  <h2 class="section-title">Mein Schritt in die Schweiz 🇨🇭</h2>
-  <p>
-    Anfang 2024 habe ich Deutschland verlassen und bin in die Schweiz ausgewandert.
-    Es war lange ein Gedanke, der zu einem Traum wurde und nicht nur ein beruflicher Neuanfang,
-    sondern auch ein bewusster Absprung von einem System, das sich für mich zunehmend wie ein
-    sinkendes Schiff anfühlte.
-  </p>
-  <p>
-    Die gesellschaftliche Entwicklung in Deutschland – geprägt von wachsender Ineffizienz, Bürokratie
-    und Ellenbogenmentalität – stand im starken Kontrast zu dem, was ich in der Schweiz vorfand:
-    ein respektvollerer Umgang, mehr Miteinander und ein funktionierendes Gemeinwesen.
-  </p>
-  <p>
-    Diese gesellschaftliche Qualität ist nicht selbstverständlich. Sie ist ein hohes Gut,
-    das es zu bewahren gilt – denn sie kann schnell verloren gehen, wenn man nicht achtsam bleibt.
-    Ich bin dankbar, hier leben und wirken zu dürfen, und trage gerne meinen Teil dazu bei,
-    dass dieses Miteinander erhalten bleibt.
-  </p>
-</div>
+
+<!-- Toast für mobile vCard -->
+<div id="toast" class="toast">📇 vCard wird heruntergeladen …</div>
 
 
     <!-- Socials -->
@@ -350,6 +383,23 @@
       document.querySelectorAll('.btn').forEach(btn => btn.classList.remove('active-btn'));
       if (event) event.target.classList.add('active-btn');
     }
+  // Toast anzeigen, wenn mobile Kontakt-Button geklickt wird
+document.addEventListener("DOMContentLoaded", function () {
+  const contactBtn = document.querySelector('.mobile-only');
+  const toast = document.getElementById('toast');
+
+  if (contactBtn && toast) {
+    contactBtn.addEventListener('click', function () {
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2500);
+    });
+  }
+});
+
+
+  
 </script>
 
 </body>
