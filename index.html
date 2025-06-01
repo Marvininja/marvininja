@@ -178,7 +178,7 @@
         <li>🤔 <strong>Philosophie:</strong> Sinnsuche, Selbstreflexion und innere Ruhe – inspiriert von Denkern wie <strong>Nietzsche, Descartes, Sartre, Jung</strong> und der stoischen Klarheit <strong>Marc Aurels</strong></li>
         <li>☦️ <strong>Religion:</strong> Christliche Weltanschauung, Glaube als Lebensanker und Orientierung</li>
       </ul>
-
+    <a href="javascript:void(0);" onclick="showSection('auswandernSection', event)" class="btn">🇨🇭 Mein Schritt in die Schweiz</a>
     </div>
 
     <!-- Arbeit: Untermenüs und Sektionen -->
@@ -266,6 +266,27 @@
       Diese Nummer ist nur für persönliche Kontakte (z. B. WhatsApp) vorgesehen und steht nicht öffentlich zur Verfügung.
   </p>
 </div>
+<!-- Auswandern -->
+<div id="auswandernSection" class="about-content">
+  <h2 class="section-title">Mein Schritt in die Schweiz 🇨🇭</h2>
+  <p>
+    Anfang 2024 habe ich Deutschland verlassen und bin in die Schweiz ausgewandert.
+    Es war lange ein Gedanke, der zu einem Traum wurde und nicht nur ein beruflicher Neuanfang,
+    sondern auch ein bewusster Absprung von einem System, das sich für mich zunehmend wie ein
+    sinkendes Schiff anfühlte.
+  </p>
+  <p>
+    Die gesellschaftliche Entwicklung in Deutschland – geprägt von wachsender Ineffizienz, Bürokratie
+    und Ellenbogenmentalität – stand im starken Kontrast zu dem, was ich in der Schweiz vorfand:
+    ein respektvollerer Umgang, mehr Miteinander und ein funktionierendes Gemeinwesen.
+  </p>
+  <p>
+    Diese gesellschaftliche Qualität ist nicht selbstverständlich. Sie ist ein hohes Gut,
+    das es zu bewahren gilt – denn sie kann schnell verloren gehen, wenn man nicht achtsam bleibt.
+    Ich bin dankbar, hier leben und wirken zu dürfen, und trage gerne meinen Teil dazu bei,
+    dass dieses Miteinander erhalten bleibt.
+  </p>
+</div>
 
 
     <!-- Socials -->
@@ -280,7 +301,7 @@
 <script>
     function showSection(id, event) {
       const mainSections = ['arbeitSection', 'lebenSection', 'kontaktSection'];
-      const contentSections = ['aboutSection', 'projekt1Section', 'projekt2Section'];
+      const contentSections = ['aboutSection', 'projekt1Section', 'projekt2Section', 'auswandernSection'];
 
       // Schließe alle Inhalte
       [...mainSections, ...contentSections].forEach(sectionId => {
