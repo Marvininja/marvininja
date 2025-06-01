@@ -301,7 +301,9 @@
 <script>
     function showSection(id, event) {
       const mainSections = ['arbeitSection', 'lebenSection', 'kontaktSection'];
-      const contentSections = ['aboutSection', 'projekt1Section', 'projekt2Section', 'auswandernSection'];
+      const contentSections = ['aboutSection', 'projekt1Section', 'projekt2Section'];
+      const lebenSections = ['auswandernSection'];
+
 
       // Schließe alle Inhalte
       [...mainSections, ...contentSections].forEach(sectionId => {
@@ -318,11 +320,17 @@
         }, 100);
       }
 
-      // Wenn ein Unterpunkt von "Arbeit" gewählt wird, bleibe im "Arbeit"-Bereich
+      // Wenn ein Unterpunkt von gewählt wird, bleibe im Unterpunkt
       if (contentSections.includes(id)) {
         const arbeitSection = document.getElementById('arbeitSection');
         if (arbeitSection) arbeitSection.classList.add('open');
       }
+      
+      if (lebenSections.includes(id)) {
+        const lebenSection = document.getElementById('lebenSection');
+        if (lebenSection) lebenSection.classList.add('open');
+      }
+
 
       // Style-Aktualisierung
       document.querySelectorAll('.btn').forEach(btn => btn.classList.remove('active-btn'));
