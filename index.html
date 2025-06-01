@@ -108,12 +108,15 @@
   
   .highlight-list li {
     text-align: left;
-    margin: 12px 0; /* Abstand zwischen den Punkten */
-    line-height: 1.6; /* angenehme Zeilenhöhe */
+    margin: 12px 0;
+    line-height: 1.6; 
   } 
 
-    
-@media (max-width: 480px) {
+  .mobile-only {
+    display: none;
+  }
+
+  @media (max-width: 480px) {
   body {
     padding: 10px;
     height: auto;
@@ -149,7 +152,10 @@
   .socials a {
     font-size: 1.2rem;
   }
- 
+
+  .mobile-only {
+    display: block;
+  }
 }
 
     
@@ -255,18 +261,24 @@
       📨 <strong>E-Mail:</strong><br>
       <a href="mailto:contact@marvininja.ch" style="color: #ffd700;">contact@marvininja.ch</a>
     </p>
+    
     <p>
-  <p>
-    📞 <strong>Telefon:</strong><br>
-    <a href="tel:+4915679652219" style="color: #ffd700;">Geschäftlich: +49 15679 652 219</a>
-  </p>
+      📞 <strong>Telefon:</strong><br>
+      <a href="tel:+4915679652219" style="color: #ffd700;">Geschäftlich: +49 15679 652 219</a>
+    </p>
+    <a href="vcards/marvin_business.vcf" class="btn mobile-only" download>
+      📇 Kontakt hinzufügen
+    </a>
 
-  <p>
-    📱 <strong>Privat:</strong>
-  </p>
-    <p style="color: #ffd700;">
-      Diese Nummer ist nur für persönliche Kontakte (z. B. WhatsApp) vorgesehen und steht nicht öffentlich zur Verfügung.
-  </p>
+
+    <p>
+      📱 <strong>Privat:</strong>
+    </p>
+      <p style="color: #ffd700;">
+        Diese Nummer ist nur für persönliche Kontakte (z. B. WhatsApp) vorgesehen und steht nicht öffentlich zur Verfügung.
+    </p>
+    
+    
 </div>
 <!-- Auswandern -->
 <div id="auswandernSection" class="about-content">
