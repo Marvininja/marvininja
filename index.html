@@ -373,7 +373,10 @@ p {
       if (target) {
         target.classList.add('open');
         setTimeout(() => {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Gezieltes, sauberes Scrollen: Abschnitt ganz nach oben!
+          const yOffset = -16; // 16 Pixel Luft nach oben, falls gewünscht (anpassbar)
+          const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
         }, 100);
       }
 
