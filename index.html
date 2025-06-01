@@ -306,7 +306,7 @@
 
 
       // Schließe alle Inhalte
-      [...mainSections, ...contentSections].forEach(sectionId => {
+      [...mainSections, ...contentSections, ...lebenSections].forEach(sectionId => {
         const section = document.getElementById(sectionId);
         if (section) section.classList.remove('open');
       });
