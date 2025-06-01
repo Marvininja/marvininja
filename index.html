@@ -181,33 +181,35 @@
     <a href="javascript:void(0);" onclick="showSection('auswandernSection', event)" class="btn">🇨🇭 Mein Schritt in die Schweiz</a>
     </div>
 
-    <!-- Arbeit: Untermenüs und Sektionen -->
-    <div id="arbeitSection" class="about-content">
-      <a href="javascript:void(0);" onclick="showSection('aboutSection', event)" class="btn">Über mich</a>
+  <!-- Arbeit: Untermenüs und Sektionen -->
+  <div id="arbeitSection" class="about-content">
+    <h2 class="section-title">Arbeit</h2>
+  
+    <!-- Arbeit -->
+    <div>
+      <h3>Über mich</h3>
+      <p>
+        Seit <strong>2017</strong> bin ich in der IT-MSP-Branche als IT-Dienstleister tätig.<br>
+        <strong>2019</strong> übernahm ich die Rolle des Applikationsspezialisten mit Schwerpunkt im Bereich
+        <em>Remote Monitoring & Management (RMM)</em> und gewann erste Erfahrungen als Führungsperson.
+      </p>
+      <ul class="highlight-list">
+        <li>⚙️ Betreuung, Weiterentwicklung & Optimierung komplexer Anwendungssysteme</li>
+        <li>📡 Überwachung, Aktualisierung & Verwaltung von Kundensystemen</li>
+        <li>📊 Berichterstattung, Qualitätssicherung & Kundenberatung</li>
+        <li>🚀 Innovationsentwicklung zur stetigen Service-Verbesserung</li>
+      </ul>
+      <p>
+        Seit <strong>2023</strong> liegt mein Fokus verstärkt auf <strong>Prozessautomatisierung</strong>.<br>
+        und seit <strong>2024</strong> beschäftige ich mich <strong> mit Künstlicher Intelligenz</strong>,
+        um maßgeschneiderte Lösungen in IT-Prozesse zu integrieren und neue Potenziale zu erschließen.
+      </p>
+    </div>
       <a href="javascript:void(0);" onclick="showSection('projekt1Section', event)" class="btn">Abschlussprojekt</a>
       <a href="javascript:void(0);" onclick="showSection('projekt2Section', event)" class="btn">Projekt 2</a>
     </div>
-  
-  <!-- Arbeit -->
-  <div id="aboutSection" class="about-content">
-    <h2 class="section-title">Über mich</h2>
-    <p>
-      Seit <strong>2017</strong> bin ich in der IT-MSP-Branche als IT-Dienstleister tätig.<br>
-      <strong>2019</strong> übernahm ich die Rolle des Applikationsspezialisten mit Schwerpunkt im Bereich
-      <em>Remote Monitoring & Management (RMM)</em> und gewann erste Erfahrungen als Führungsperson.
-    </p>
-    <ul class="highlight-list">
-      <li>⚙️ Betreuung, Weiterentwicklung & Optimierung komplexer Anwendungssysteme</li>
-      <li>📡 Überwachung, Aktualisierung & Verwaltung von Kundensystemen</li>
-      <li>📊 Berichterstattung, Qualitätssicherung & Kundenberatung</li>
-      <li>🚀 Innovationsentwicklung zur stetigen Service-Verbesserung</li>
-    </ul>
-    <p>
-      Seit <strong>2023</strong> liegt mein Fokus verstärkt auf <strong>Prozessautomatisierung</strong>.<br>
-      und seit <strong>2024</strong> beschäftige ich mich <strong> mit Künstlicher Intelligenz</strong>,
-      um maßgeschneiderte Lösungen in IT-Prozesse zu integrieren und neue Potenziale zu erschließen.
-    </p>
-  </div>
+
+      
   
   <!-- Projekt 1 -->
   <div id="projekt1Section" class="about-content">
@@ -301,7 +303,7 @@
 <script>
     function showSection(id, event) {
       const mainSections = ['arbeitSection', 'lebenSection', 'kontaktSection'];
-      const contentSections = ['aboutSection', 'projekt1Section', 'projekt2Section'];
+      const contentSections = ['projekt1Section', 'projekt2Section'];
       const lebenSections = ['auswandernSection'];
 
 
