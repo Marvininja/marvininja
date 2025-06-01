@@ -8,6 +8,10 @@
   <link rel="icon" type="image/png" href="img/favicon2.png">
   <link rel="apple-touch-icon" href="img/favicon.png">
   <style>
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
@@ -52,16 +56,18 @@ p {
 
 .btn {
   display: block;
+  width: 100%;
+  max-width: 340px;
+  margin: 10px auto;
   background: transparent;
   border: 2px solid #ffd700;
   border-radius: 8px;
   padding: 10px;
-  margin: 10px auto;
-  width: 80%;
-  text-decoration: none;
   color: #ffd700;
   font-weight: 600;
   transition: background 0.3s, color 0.3s;
+  text-decoration: none;
+  box-sizing: border-box;
 }
 
 .btn:hover,
@@ -142,7 +148,7 @@ p {
 }
 
 /* --- Responsive Styles für Mobile --- */
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   body {
     padding: 10px;
     height: auto;
@@ -153,6 +159,7 @@ p {
     width: 100%;
     padding: 16px;
     border-radius: 12px;
+    max-width: 100%;
   }
 
   h1 {
@@ -161,6 +168,7 @@ p {
 
   .btn {
     width: 100%;
+    max-width: none;
     padding: 10px;
     font-size: 0.95rem;
   }
@@ -183,6 +191,7 @@ p {
     display: block;
   }
 }
+
 
 
     
