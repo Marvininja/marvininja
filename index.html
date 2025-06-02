@@ -77,6 +77,28 @@ p {
   color: black;
 }
 
+/* Submenü-Buttons */
+.btn.sub-btn {
+  margin-left: 22px;
+  font-size: 0.95em;
+  border-color: #ffd70080;
+  color: #ffd700b0;
+  background: rgba(0,0,0,0.12);
+  text-align: left;
+  padding-left: 28px;
+  position: relative;
+  max-width: 300px;
+}
+.btn.sub-btn::before {
+  content: "↳";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.06em;
+  color: #ffd70085;
+}
+
 .socials {
   margin-top: 20px;
 }
@@ -192,10 +214,6 @@ p {
     display: block;
   }
 }
-
-
-
-    
   </style>
 </head>
 <body>
@@ -204,14 +222,14 @@ p {
     <h1>Marvin</h1>
     <p>Nerd, Visionary & Ninja</p>
 
-
-    <!-- Hauptnavigation mit Leben > Arbeit > Kontakt -->
+    <!-- Hauptnavigation -->
     <a href="javascript:void(0);" onclick="showSection('lebenSection', event)" class="btn">Leben</a>
     <a href="javascript:void(0);" onclick="showSection('arbeitSection', event)" class="btn">Arbeit</a>
     <a href="javascript:void(0);" onclick="showSection('kontaktSection', event)" class="btn active-btn">Kontakt</a>
-    
+
     <!-- Leben: Interessenbereiche -->
     <div id="lebenSection" class="about-content">
+      <a href="javascript:void(0);" onclick="showSection('auswandernSection', event)" class="btn sub-btn">Mein Schritt in die Schweiz</a>
       <h2 class="section-title">Leben</h2>
       <ul class="highlight-list">
         <li>📚 <strong>Lernen & Lesen:</strong> Stetige Weiterentwicklung durch Bücher, Artikel & Studien</li>
@@ -221,11 +239,9 @@ p {
         <li>🤔 <strong>Philosophie:</strong> Sinnsuche, Selbstreflexion und innere Ruhe – inspiriert von Denkern wie <strong>Nietzsche, Descartes, Sartre, Jung</strong> und der stoischen Klarheit <strong>Marc Aurels</strong></li>
         <li>☦️ <strong>Religion:</strong> Christliche Weltanschauung, Glaube als Lebensanker und Orientierung</li>
       </ul>
-    <a href="javascript:void(0);" onclick="showSection('auswandernSection', event)" class="btn">🇨🇭 Mein Schritt in die Schweiz</a>
     </div>
 
-    
-        <!-- Auswandern -->
+    <!-- Auswandern -->
     <div id="auswandernSection" class="about-content">
       <h2 class="section-title">Mein Schritt in die Schweiz 🇨🇭</h2>
       <p>
@@ -247,104 +263,91 @@ p {
       </p>
     </div>
 
-    
-  <!-- Arbeit: Untermenüs und Sektionen -->
-  <div id="arbeitSection" class="about-content">
-    <h2 class="section-title">Arbeit</h2>
-  
     <!-- Arbeit -->
-    <div>
-      <h3>Über mich</h3>
+    <div id="arbeitSection" class="about-content">
+      <a href="javascript:void(0);" onclick="showSection('projekt1Section', event)" class="btn sub-btn">Abschlussprojekt</a>
+      <a href="javascript:void(0);" onclick="showSection('projekt2Section', event)" class="btn sub-btn">Projekt 2</a>
+      <h2 class="section-title">Arbeit</h2>
+      <div>
+        <h3>Über mich</h3>
+        <p>
+          Seit <strong>2017</strong> bin ich in der IT-MSP-Branche als IT-Dienstleister tätig.<br>
+          <strong>2019</strong> übernahm ich die Rolle des Applikationsspezialisten mit Schwerpunkt im Bereich
+          <em>Remote Monitoring & Management (RMM)</em> und gewann erste Erfahrungen als Führungsperson.
+        </p>
+        <ul class="highlight-list">
+          <li>⚙️ Betreuung, Weiterentwicklung & Optimierung komplexer Anwendungssysteme</li>
+          <li>📡 Überwachung, Aktualisierung & Verwaltung von Kundensystemen</li>
+          <li>📊 Berichterstattung, Qualitätssicherung & Kundenberatung</li>
+          <li>🚀 Innovationsentwicklung zur stetigen Service-Verbesserung</li>
+        </ul>
+        <p>
+          Seit <strong>2023</strong> liegt mein Fokus verstärkt auf <strong>Prozessautomatisierung</strong>.<br>
+          und seit <strong>2024</strong> beschäftige ich mich <strong> mit Künstlicher Intelligenz</strong>,
+          um maßgeschneiderte Lösungen in IT-Prozesse zu integrieren und neue Potenziale zu erschließen.
+        </p>
+      </div>
+    </div>
+
+    <!-- Projekt 1 -->
+    <div id="projekt1Section" class="about-content">
+      <h2 class="section-title">Automatisiertes Server-Patchmanagement</h2>
       <p>
-        Seit <strong>2017</strong> bin ich in der IT-MSP-Branche als IT-Dienstleister tätig.<br>
-        <strong>2019</strong> übernahm ich die Rolle des Applikationsspezialisten mit Schwerpunkt im Bereich
-        <em>Remote Monitoring & Management (RMM)</em> und gewann erste Erfahrungen als Führungsperson.
+        In meiner Projektarbeit habe ich ein automatisiertes Patchmanagement-System auf Basis von
+        <span style="white-space: nowrap;"><strong>N-Able&nbsp;N-sight&nbsp;RMM</strong></span> entwickelt –
+        einer marktführenden Lösung im Bereich <em>Remote Monitoring & Management</em>.
       </p>
+      <p>
+        Zuvor wurden sicherheitskritische Updates manuell durchgeführt, um höchste Qualitäts- und
+        Compliance-Standards zu erfüllen. Durch gezielte Erweiterung und Umgehung bestehender
+        Limitationen konnte ich eine Lösung schaffen, die <strong>vollautomatisiert</strong> die gleichen
+        hohen Standards sicherstellt – bei gleichzeitiger <strong>Reduktion manueller Aufwände auf nahezu null</strong>.
+      </p>
+      <p>
+        Gleichzeitig wurde erreicht, flächendeckend bei allen Kunden ein <strong>sicheres Konzept</strong> mit <strong>drei
+        gestaffelten Testgruppen</strong> und einer <strong> Produktivgruppe</strong> umzusetzen. Dadurch konnten
+        wir jeden Monat die <strong>höchste Verfügbarkeit</strong> und <strong>vollständige Funktionalität der kritischen Systeme</strong> sicherstellen und garantieren.
+      </p>
+      <p><strong>Das Ergebnis:</strong></p>
       <ul class="highlight-list">
-        <li>⚙️ Betreuung, Weiterentwicklung & Optimierung komplexer Anwendungssysteme</li>
-        <li>📡 Überwachung, Aktualisierung & Verwaltung von Kundensystemen</li>
-        <li>📊 Berichterstattung, Qualitätssicherung & Kundenberatung</li>
-        <li>🚀 Innovationsentwicklung zur stetigen Service-Verbesserung</li>
+        <li>✅ Mehr Effizienz</li>
+        <li>✅ Weniger Fehlerpotenzial</li>
+        <li>✅ Mehr Sicherheit</li>
+        <li>✅ Weniger Ausfälle</li>
+        <li>✅ Zukunftsfähige, skalierbare IT-Services</li>
       </ul>
+    </div>
+
+    <!-- Projekt 2 -->
+    <div id="projekt2Section" class="about-content">
+      <h2 class="section-title">Projekt 2</h2>
+      <p><em>In Kürze verfügbar …</em></p>
+    </div>
+
+    <!-- Kontakt -->
+    <div id="kontaktSection" class="about-content">
+      <h2 class="section-title">Kontakt</h2>
       <p>
-        Seit <strong>2023</strong> liegt mein Fokus verstärkt auf <strong>Prozessautomatisierung</strong>.<br>
-        und seit <strong>2024</strong> beschäftige ich mich <strong> mit Künstlicher Intelligenz</strong>,
-        um maßgeschneiderte Lösungen in IT-Prozesse zu integrieren und neue Potenziale zu erschließen.
+        📨 <strong>E-Mail:</strong><br>
+        <a href="mailto:contact@marvininja.ch" style="color: #ffd700;">contact@marvininja.ch</a>
       </p>
-    </div>
-      <a href="javascript:void(0);" onclick="showSection('projekt1Section', event)" class="btn">Abschlussprojekt</a>
-      <a href="javascript:void(0);" onclick="showSection('projekt2Section', event)" class="btn">Projekt 2</a>
-    </div>
-
-      
-  
-  <!-- Projekt 1 -->
-  <div id="projekt1Section" class="about-content">
-    <h2 class="section-title">Automatisiertes Server-Patchmanagement</h2>
-    <p>
-      In meiner Projektarbeit habe ich ein automatisiertes Patchmanagement-System auf Basis von
-      <span style="white-space: nowrap;"><strong>N-Able&nbsp;N-sight&nbsp;RMM</strong></span> entwickelt –
-      einer marktführenden Lösung im Bereich <em>Remote Monitoring & Management</em>.
-    </p>
-    <p>
-      Zuvor wurden sicherheitskritische Updates manuell durchgeführt, um höchste Qualitäts- und
-      Compliance-Standards zu erfüllen. Durch gezielte Erweiterung und Umgehung bestehender
-      Limitationen konnte ich eine Lösung schaffen, die <strong>vollautomatisiert</strong> die gleichen
-      hohen Standards sicherstellt – bei gleichzeitiger <strong>Reduktion manueller Aufwände auf nahezu null</strong>.
-    </p>
-    <p>
-      Gleichzeitig wurde erreicht, flächendeckend bei allen Kunden ein <strong>sicheres Konzept</strong> mit <strong>drei
-      gestaffelten Testgruppen</strong> und einer <strong> Produktivgruppe</strong> umzusetzen. Dadurch konnten
-      wir jeden Monat die <strong>höchste Verfügbarkeit</strong> und <strong>vollständige Funktionalität der kritischen Systeme</strong> sicherstellen und garantieren.
-    </p>
-  
-  <p><strong>Das Ergebnis:</strong></p>
-    <ul class="highlight-list">
-      <li>✅ Mehr Effizienz</li>
-      <li>✅ Weniger Fehlerpotenzial</li>
-      <li>✅ Mehr Sicherheit</li>
-      <li>✅ Weniger Ausfälle</li>
-      <li>✅ Zukunftsfähige, skalierbare IT-Services</li>
-    </ul>
-  
-  </div>
-  
-  <!-- Projekt 2 -->
-  <div id="projekt2Section" class="about-content">
-    <h2 class="section-title">Projekt 2</h2>
-    <p><em>In Kürze verfügbar …</em></p>
-  </div>
-  
-  <!-- Kontakt -->
-  <div id="kontaktSection" class="about-content">
-    <h2 class="section-title">Kontakt</h2>
-    <p>
-      📨 <strong>E-Mail:</strong><br>
-      <a href="mailto:contact@marvininja.ch" style="color: #ffd700;">contact@marvininja.ch</a>
-    </p>
-    
-    <p>
-      📞 <strong>Telefon:</strong><br>
-      <a href="tel:+4915679652219" style="color: #ffd700;">Geschäftlich: +49 15679 652 219</a>
-    </p>
-    <a href="vcards/marvin_business.vcf" class="btn mobile-only" download>
-      📇 Kontakt hinzufügen
-    </a>
-
-
-    <p>
-      📱 <strong>Privat:</strong>
-    </p>
+      <p>
+        📞 <strong>Telefon:</strong><br>
+        <a href="tel:+4915679652219" style="color: #ffd700;">Geschäftlich: +49 15679 652 219</a>
+      </p>
+      <a href="vcards/marvin_business.vcf" class="btn mobile-only" download>
+        📇 Kontakt hinzufügen
+      </a>
+      <p>
+        📱 <strong>Privat:</strong>
+      </p>
       <p style="color: #ffd700;">
         Diese Nummer ist nur für persönliche Kontakte (z. B. WhatsApp) vorgesehen und steht nicht öffentlich zur Verfügung.
-    </p>
-    
-    
-</div>
+      </p>
+    </div>
 
-<!-- Toast für mobile vCard -->
-<div id="toast" class="toast">📇 vCard wird heruntergeladen …</div>
-
+    <!-- Toast für mobile vCard -->
+    <div id="toast" class="toast">📇 vCard wird heruntergeladen …</div>
 
     <!-- Socials -->
     <div class="socials">
@@ -360,7 +363,6 @@ p {
       const mainSections = ['arbeitSection', 'lebenSection', 'kontaktSection'];
       const contentSections = ['projekt1Section', 'projekt2Section'];
       const lebenSections = ['auswandernSection'];
-
 
       // Schließe alle Inhalte
       [...mainSections, ...contentSections, ...lebenSections].forEach(sectionId => {
@@ -391,29 +393,24 @@ p {
         if (lebenSection) lebenSection.classList.add('open');
       }
 
-
       // Style-Aktualisierung
       document.querySelectorAll('.btn').forEach(btn => btn.classList.remove('active-btn'));
       if (event) event.target.classList.add('active-btn');
     }
   // Toast anzeigen, wenn mobile Kontakt-Button geklickt wird
-document.addEventListener("DOMContentLoaded", function () {
-  const contactBtn = document.querySelector('.mobile-only');
-  const toast = document.getElementById('toast');
+  document.addEventListener("DOMContentLoaded", function () {
+    const contactBtn = document.querySelector('.mobile-only');
+    const toast = document.getElementById('toast');
 
-  if (contactBtn && toast) {
-    contactBtn.addEventListener('click', function () {
-      toast.classList.add('show');
-      setTimeout(() => {
-        toast.classList.remove('show');
-      }, 2500);
-    });
-  }
-});
-
-
-  
+    if (contactBtn && toast) {
+      contactBtn.addEventListener('click', function () {
+        toast.classList.add('show');
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 2500);
+      });
+    }
+  });
 </script>
-
 </body>
 </html>
