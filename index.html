@@ -77,13 +77,14 @@ p {
   color: black;
   border-color: #ffd700;
 }
-
 .subnav {
   margin-bottom: 10px;
+  padding-left: 12px; /* sorgt für optische Einrückung aller Unterpunkte */
 }
 
 .btn.sub-btn {
-  margin-left: 22px;
+  display: block;
+  margin-left: 12px;
   font-size: 0.95em;
   border-color: #ffd70080;
   color: #ffd700b0;
@@ -91,7 +92,7 @@ p {
   text-align: left;
   padding-left: 28px;
   position: relative;
-  max-width: 300px;
+  max-width: 320px;
   transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
 .btn.sub-btn::before {
@@ -103,6 +104,7 @@ p {
   font-size: 1.06em;
   color: #ffd70085;
 }
+
 
 /* Tab-Inhalte */
 .tab-content {
