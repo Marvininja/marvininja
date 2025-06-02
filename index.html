@@ -55,6 +55,7 @@ p {
   color: #eee;
 }
 
+/* Hauptmenü & Submenü */
 .btn {
   display: block;
   width: 100%;
@@ -66,28 +67,34 @@ p {
   padding: 10px;
   color: #ffd700;
   font-weight: 600;
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
   text-decoration: none;
   box-sizing: border-box;
+  cursor: pointer;
 }
 
 .btn:hover,
 .btn.active-btn {
   background-color: #ffd700;
   color: black;
+  border-color: #ffd700;
 }
 
-/* Submenü-Buttons */
+.subnav {
+  margin-bottom: 10px;
+}
+
 .btn.sub-btn {
   margin-left: 22px;
   font-size: 0.95em;
   border-color: #ffd70080;
   color: #ffd700b0;
-  background: rgba(0,0,0,0.12);
+  background: rgba(0,0,0,0.10);
   text-align: left;
   padding-left: 28px;
   position: relative;
   max-width: 300px;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
 .btn.sub-btn::before {
   content: "↳";
@@ -99,11 +106,27 @@ p {
   color: #ffd70085;
 }
 
+/* Tab-Inhalte */
+.tab-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.35s, max-height 0.45s cubic-bezier(.5,1.5,.7,1);
+  pointer-events: none;
+  will-change: opacity, max-height;
+}
+.tab-content.open {
+  opacity: 1;
+  max-height: 2000px;
+  pointer-events: auto;
+}
+
+/* Für Kompatibilität (alte Logik ausblenden) */
 .arbeit-sub {
-  display: none;
+  display: none !important;
 }
 .arbeit-sub.open {
-  display: block;
+  display: none !important;
 }
 
 .socials {
@@ -221,6 +244,7 @@ p {
     display: block;
   }
 }
+
   </style>
 </head>
 <body>
@@ -234,48 +258,53 @@ p {
     <a href="javascript:void(0);" onclick="showSection('arbeitSection', event)" class="btn">Arbeit</a>
     <a href="javascript:void(0);" onclick="showSection('kontaktSection', event)" class="btn active-btn">Kontakt</a>
 
-    <!-- Leben: Interessenbereiche -->
+    <!-- Leben mit Tab-System -->
     <div id="lebenSection" class="about-content">
-      <a href="javascript:void(0);" onclick="showSection('auswandernSection', event)" class="btn sub-btn">Mein Schritt in die Schweiz</a>
-      <h2 class="section-title">Leben</h2>
-      <ul class="highlight-list">
-        <li>📚 <strong>Lernen & Lesen:</strong> Stetige Weiterentwicklung durch Bücher, Artikel & Studien</li>
-        <li>🏃‍♂️ <strong>Sport:</strong> HIIT-Workout, Laufen, Sprinttraining – Körper und Geist in Bewegung</li>
-        <li>🏍️ <strong>Töff:</strong> Leidenschaft für Motoren, Motorräder & Technik</li>
-        <li>🧠 <strong>Psychologie:</strong> Menschliches Verhalten verstehen, analysieren und reflektieren</li>
-        <li>🤔 <strong>Philosophie:</strong> Sinnsuche, Selbstreflexion und innere Ruhe – inspiriert von Denkern wie <strong>Nietzsche, Descartes, Sartre, Jung</strong> und der stoischen Klarheit <strong>Marc Aurels</strong></li>
-        <li>☦️ <strong>Religion:</strong> Christliche Weltanschauung, Glaube als Lebensanker und Orientierung</li>
-      </ul>
+      <div class="subnav" data-tab-group="leben">
+        <a href="javascript:void(0);" onclick="showTab('leben', 'interessenSection', this)" class="btn sub-btn active-btn">Interessen</a>
+        <a href="javascript:void(0);" onclick="showTab('leben', 'auswandernSection', this)" class="btn sub-btn">Mein Schritt in die Schweiz</a>
+      </div>
+      <div id="interessenSection" class="tab-content tab-content-leben open">
+        <h2 class="section-title">Leben</h2>
+        <ul class="highlight-list">
+          <li>📚 <strong>Lernen & Lesen:</strong> Stetige Weiterentwicklung durch Bücher, Artikel & Studien</li>
+          <li>🏃‍♂️ <strong>Sport:</strong> HIIT-Workout, Laufen, Sprinttraining – Körper und Geist in Bewegung</li>
+          <li>🏍️ <strong>Töff:</strong> Leidenschaft für Motoren, Motorräder & Technik</li>
+          <li>🧠 <strong>Psychologie:</strong> Menschliches Verhalten verstehen, analysieren und reflektieren</li>
+          <li>🤔 <strong>Philosophie:</strong> Sinnsuche, Selbstreflexion und innere Ruhe – inspiriert von Denkern wie <strong>Nietzsche, Descartes, Sartre, Jung</strong> und der stoischen Klarheit <strong>Marc Aurels</strong></li>
+          <li>☦️ <strong>Religion:</strong> Christliche Weltanschauung, Glaube als Lebensanker und Orientierung</li>
+        </ul>
+      </div>
+      <div id="auswandernSection" class="tab-content tab-content-leben">
+        <h2 class="section-title">Mein Schritt in die Schweiz 🇨🇭</h2>
+        <p>
+          Anfang 2024 habe ich Deutschland verlassen und bin in die Schweiz ausgewandert.
+          Es war lange ein Gedanke, der zu einem Traum wurde und nicht nur ein beruflicher Neuanfang,
+          sondern auch ein bewusster Absprung von einem System, das sich für mich zunehmend wie ein
+          sinkendes Schiff anfühlte.
+        </p>
+        <p>
+          Die gesellschaftliche Entwicklung in Deutschland – geprägt von wachsender Ineffizienz, Bürokratie
+          und Ellenbogenmentalität – stand im starken Kontrast zu dem, was ich in der Schweiz vorfand:
+          ein respektvollerer Umgang, mehr Miteinander und ein funktionierendes Gemeinwesen.
+        </p>
+        <p>
+          Diese gesellschaftliche Qualität ist nicht selbstverständlich. Sie ist ein hohes Gut,
+          das es zu bewahren gilt – denn sie kann schnell verloren gehen, wenn man nicht achtsam bleibt.
+          Ich bin dankbar, hier leben und wirken zu dürfen, und trage gerne meinen Teil dazu bei,
+          dass dieses Miteinander erhalten bleibt.
+        </p>
+      </div>
     </div>
 
-    <!-- Auswandern -->
-    <div id="auswandernSection" class="about-content">
-      <h2 class="section-title">Mein Schritt in die Schweiz 🇨🇭</h2>
-      <p>
-        Anfang 2024 habe ich Deutschland verlassen und bin in die Schweiz ausgewandert.
-        Es war lange ein Gedanke, der zu einem Traum wurde und nicht nur ein beruflicher Neuanfang,
-        sondern auch ein bewusster Absprung von einem System, das sich für mich zunehmend wie ein
-        sinkendes Schiff anfühlte.
-      </p>
-      <p>
-        Die gesellschaftliche Entwicklung in Deutschland – geprägt von wachsender Ineffizienz, Bürokratie
-        und Ellenbogenmentalität – stand im starken Kontrast zu dem, was ich in der Schweiz vorfand:
-        ein respektvollerer Umgang, mehr Miteinander und ein funktionierendes Gemeinwesen.
-      </p>
-      <p>
-        Diese gesellschaftliche Qualität ist nicht selbstverständlich. Sie ist ein hohes Gut,
-        das es zu bewahren gilt – denn sie kann schnell verloren gehen, wenn man nicht achtsam bleibt.
-        Ich bin dankbar, hier leben und wirken zu dürfen, und trage gerne meinen Teil dazu bei,
-        dass dieses Miteinander erhalten bleibt.
-      </p>
-    </div>
-
-    <!-- Arbeit (mit Sub-Navigation) -->
+    <!-- Arbeit mit Tab-System -->
     <div id="arbeitSection" class="about-content">
-      <a href="javascript:void(0);" onclick="showArbeitSub('ueberMichSection', event)" class="btn sub-btn active-btn">Über mich</a>
-      <a href="javascript:void(0);" onclick="showArbeitSub('projekt1Section', event)" class="btn sub-btn">Abschlussprojekt</a>
-      <a href="javascript:void(0);" onclick="showArbeitSub('projekt2Section', event)" class="btn sub-btn">Projekt 2</a>
-      <div id="ueberMichSection" class="arbeit-sub open">
+      <div class="subnav" data-tab-group="arbeit">
+        <a href="javascript:void(0);" onclick="showTab('arbeit', 'ueberMichSection', this)" class="btn sub-btn active-btn">Über mich</a>
+        <a href="javascript:void(0);" onclick="showTab('arbeit', 'projekt1Section', this)" class="btn sub-btn">Abschlussprojekt</a>
+        <a href="javascript:void(0);" onclick="showTab('arbeit', 'projekt2Section', this)" class="btn sub-btn">Projekt 2</a>
+      </div>
+      <div id="ueberMichSection" class="tab-content tab-content-arbeit open">
         <h2 class="section-title">Arbeit</h2>
         <h3>Über mich</h3>
         <p>
@@ -295,7 +324,7 @@ p {
           um maßgeschneiderte Lösungen in IT-Prozesse zu integrieren und neue Potenziale zu erschließen.
         </p>
       </div>
-      <div id="projekt1Section" class="arbeit-sub">
+      <div id="projekt1Section" class="tab-content tab-content-arbeit">
         <h2 class="section-title">Automatisiertes Server-Patchmanagement</h2>
         <p>
           In meiner Projektarbeit habe ich ein automatisiertes Patchmanagement-System auf Basis von
@@ -322,7 +351,7 @@ p {
           <li>✅ Zukunftsfähige, skalierbare IT-Services</li>
         </ul>
       </div>
-      <div id="projekt2Section" class="arbeit-sub">
+      <div id="projekt2Section" class="tab-content tab-content-arbeit">
         <h2 class="section-title">Projekt 2</h2>
         <p><em>In Kürze verfügbar …</em></p>
       </div>
@@ -365,10 +394,9 @@ p {
 <script>
     function showSection(id, event) {
       const mainSections = ['arbeitSection', 'lebenSection', 'kontaktSection'];
-      const lebenSections = ['auswandernSection'];
 
-      // Schließe alle Inhalte
-      [...mainSections, ...lebenSections].forEach(sectionId => {
+      // Schließe alle Hauptbereiche
+      mainSections.forEach(sectionId => {
         const section = document.getElementById(sectionId);
         if (section) section.classList.remove('open');
       });
@@ -378,8 +406,8 @@ p {
       if (target) {
         target.classList.add('open');
         setTimeout(() => {
-          // Gezieltes, sauberes Scrollen: Abschnitt ganz nach oben!
-          const yOffset = -16; // 16 Pixel Luft nach oben, falls gewünscht (anpassbar)
+          // Gezieltes, sauberes Scrollen
+          const yOffset = -16;
           const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
           window.scrollTo({ top: y, behavior: 'smooth' });
         }, 290);
@@ -387,24 +415,21 @@ p {
 
       // Style-Aktualisierung Hauptnavigation
       document.querySelectorAll('.btn').forEach(btn => btn.classList.remove('active-btn'));
-      // Nur die Hauptnavigation-Buttons bekommen .active-btn
       if (event && event.target.parentElement.classList.contains('card')) {
         event.target.classList.add('active-btn');
       }
     }
 
-    // Untermenü "Arbeit"
-    function showArbeitSub(id, event) {
-      // Schließe alle Sub-Sections
-      document.querySelectorAll('.arbeit-sub').forEach(sub => sub.classList.remove('open'));
-      // Öffne die gewünschte Sub-Section
-      const target = document.getElementById(id);
-      if (target) target.classList.add('open');
-
-      //
-      // Update Untermenü-Button-Styles
-      document.querySelectorAll('#arbeitSection .sub-btn').forEach(btn => btn.classList.remove('active-btn'));
-      if (event) event.target.classList.add('active-btn');
+    // Universelles Tab-System für Unterbereiche (Leben, Arbeit etc.)
+    function showTab(group, tabId, btn) {
+      // Alle Tabs dieser Gruppe schließen
+      document.querySelectorAll('.tab-content-' + group).forEach(el => el.classList.remove('open'));
+      // Gewählten Tab öffnen
+      document.getElementById(tabId).classList.add('open');
+      // Alle Buttons dieser Gruppe deaktivieren
+      document.querySelectorAll('.subnav[data-tab-group="' + group + '"] .sub-btn').forEach(b => b.classList.remove('active-btn'));
+      // Geklickten Button aktivieren
+      if (btn) btn.classList.add('active-btn');
     }
 
     // Toast anzeigen, wenn mobile Kontakt-Button geklickt wird
@@ -421,6 +446,6 @@ p {
         });
       }
     });
-  </script>
+</script>
 </body>
 </html>
