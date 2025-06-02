@@ -18,22 +18,21 @@ body {
   color: #ffd700;
   background: url('img/bg.jpg') no-repeat center center fixed;
   background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  flex-direction: column;
   text-align: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 
 .card {
   background-color: rgba(0,0,0,0.5);
   border-radius: 20px;
   padding: 20px;
-  width: 90%;
-  max-width: 400px;
+  width: 95%;
+  max-width: 480px;
+  min-width: 260px;
+  margin: 0 auto 24px auto;
   backdrop-filter: blur(10px);
-  margin: 40px 0 20px 0;
+  /* KEIN height/max-height! */
 }
 
 .profile-pic {
@@ -55,7 +54,6 @@ p {
   color: #eee;
 }
 
-/* Hauptmenü & Submenü */
 .btn {
   display: block;
   width: 100%;
@@ -203,16 +201,17 @@ p {
 /* --- Responsive Styles für Mobile --- */
 @media (max-width: 600px) {
   body {
-    padding: 10px;
+    padding: 10px 0;
     height: auto;
     align-items: stretch;
   }
 
   .card {
     width: 100%;
-    padding: 16px;
+    padding: 10px;
     border-radius: 12px;
     max-width: 100%;
+    margin: 0 auto 16px auto;
   }
 
   h1 {
@@ -244,7 +243,6 @@ p {
     display: block;
   }
 }
-
   </style>
 </head>
 <body>
