@@ -99,6 +99,13 @@ p {
   color: #ffd70085;
 }
 
+.arbeit-sub {
+  display: none;
+}
+.arbeit-sub.open {
+  display: block;
+}
+
 .socials {
   margin-top: 20px;
 }
@@ -263,12 +270,13 @@ p {
       </p>
     </div>
 
-    <!-- Arbeit -->
+    <!-- Arbeit (mit Sub-Navigation) -->
     <div id="arbeitSection" class="about-content">
-      <a href="javascript:void(0);" onclick="showSection('projekt1Section', event)" class="btn sub-btn">Abschlussprojekt</a>
-      <a href="javascript:void(0);" onclick="showSection('projekt2Section', event)" class="btn sub-btn">Projekt 2</a>
-      <h2 class="section-title">Arbeit</h2>
-      <div>
+      <a href="javascript:void(0);" onclick="showArbeitSub('ueberMichSection', event)" class="btn sub-btn active-btn">Über mich</a>
+      <a href="javascript:void(0);" onclick="showArbeitSub('projekt1Section', event)" class="btn sub-btn">Abschlussprojekt</a>
+      <a href="javascript:void(0);" onclick="showArbeitSub('projekt2Section', event)" class="btn sub-btn">Projekt 2</a>
+      <div id="ueberMichSection" class="arbeit-sub open">
+        <h2 class="section-title">Arbeit</h2>
         <h3>Über mich</h3>
         <p>
           Seit <strong>2017</strong> bin ich in der IT-MSP-Branche als IT-Dienstleister tätig.<br>
@@ -287,41 +295,37 @@ p {
           um maßgeschneiderte Lösungen in IT-Prozesse zu integrieren und neue Potenziale zu erschließen.
         </p>
       </div>
-    </div>
-
-    <!-- Projekt 1 -->
-    <div id="projekt1Section" class="about-content">
-      <h2 class="section-title">Automatisiertes Server-Patchmanagement</h2>
-      <p>
-        In meiner Projektarbeit habe ich ein automatisiertes Patchmanagement-System auf Basis von
-        <span style="white-space: nowrap;"><strong>N-Able&nbsp;N-sight&nbsp;RMM</strong></span> entwickelt –
-        einer marktführenden Lösung im Bereich <em>Remote Monitoring & Management</em>.
-      </p>
-      <p>
-        Zuvor wurden sicherheitskritische Updates manuell durchgeführt, um höchste Qualitäts- und
-        Compliance-Standards zu erfüllen. Durch gezielte Erweiterung und Umgehung bestehender
-        Limitationen konnte ich eine Lösung schaffen, die <strong>vollautomatisiert</strong> die gleichen
-        hohen Standards sicherstellt – bei gleichzeitiger <strong>Reduktion manueller Aufwände auf nahezu null</strong>.
-      </p>
-      <p>
-        Gleichzeitig wurde erreicht, flächendeckend bei allen Kunden ein <strong>sicheres Konzept</strong> mit <strong>drei
-        gestaffelten Testgruppen</strong> und einer <strong> Produktivgruppe</strong> umzusetzen. Dadurch konnten
-        wir jeden Monat die <strong>höchste Verfügbarkeit</strong> und <strong>vollständige Funktionalität der kritischen Systeme</strong> sicherstellen und garantieren.
-      </p>
-      <p><strong>Das Ergebnis:</strong></p>
-      <ul class="highlight-list">
-        <li>✅ Mehr Effizienz</li>
-        <li>✅ Weniger Fehlerpotenzial</li>
-        <li>✅ Mehr Sicherheit</li>
-        <li>✅ Weniger Ausfälle</li>
-        <li>✅ Zukunftsfähige, skalierbare IT-Services</li>
-      </ul>
-    </div>
-
-    <!-- Projekt 2 -->
-    <div id="projekt2Section" class="about-content">
-      <h2 class="section-title">Projekt 2</h2>
-      <p><em>In Kürze verfügbar …</em></p>
+      <div id="projekt1Section" class="arbeit-sub">
+        <h2 class="section-title">Automatisiertes Server-Patchmanagement</h2>
+        <p>
+          In meiner Projektarbeit habe ich ein automatisiertes Patchmanagement-System auf Basis von
+          <span style="white-space: nowrap;"><strong>N-Able&nbsp;N-sight&nbsp;RMM</strong></span> entwickelt –
+          einer marktführenden Lösung im Bereich <em>Remote Monitoring & Management</em>.
+        </p>
+        <p>
+          Zuvor wurden sicherheitskritische Updates manuell durchgeführt, um höchste Qualitäts- und
+          Compliance-Standards zu erfüllen. Durch gezielte Erweiterung und Umgehung bestehender
+          Limitationen konnte ich eine Lösung schaffen, die <strong>vollautomatisiert</strong> die gleichen
+          hohen Standards sicherstellt – bei gleichzeitiger <strong>Reduktion manueller Aufwände auf nahezu null</strong>.
+        </p>
+        <p>
+          Gleichzeitig wurde erreicht, flächendeckend bei allen Kunden ein <strong>sicheres Konzept</strong> mit <strong>drei
+          gestaffelten Testgruppen</strong> und einer <strong> Produktivgruppe</strong> umzusetzen. Dadurch konnten
+          wir jeden Monat die <strong>höchste Verfügbarkeit</strong> und <strong>vollständige Funktionalität der kritischen Systeme</strong> sicherstellen und garantieren.
+        </p>
+        <p><strong>Das Ergebnis:</strong></p>
+        <ul class="highlight-list">
+          <li>✅ Mehr Effizienz</li>
+          <li>✅ Weniger Fehlerpotenzial</li>
+          <li>✅ Mehr Sicherheit</li>
+          <li>✅ Weniger Ausfälle</li>
+          <li>✅ Zukunftsfähige, skalierbare IT-Services</li>
+        </ul>
+      </div>
+      <div id="projekt2Section" class="arbeit-sub">
+        <h2 class="section-title">Projekt 2</h2>
+        <p><em>In Kürze verfügbar …</em></p>
+      </div>
     </div>
 
     <!-- Kontakt -->
@@ -361,11 +365,10 @@ p {
 <script>
     function showSection(id, event) {
       const mainSections = ['arbeitSection', 'lebenSection', 'kontaktSection'];
-      const contentSections = ['projekt1Section', 'projekt2Section'];
       const lebenSections = ['auswandernSection'];
 
       // Schließe alle Inhalte
-      [...mainSections, ...contentSections, ...lebenSections].forEach(sectionId => {
+      [...mainSections, ...lebenSections].forEach(sectionId => {
         const section = document.getElementById(sectionId);
         if (section) section.classList.remove('open');
       });
@@ -382,35 +385,42 @@ p {
         }, 290);
       }
 
-      // Wenn ein Unterpunkt von gewählt wird, bleibe im Unterpunkt
-      if (contentSections.includes(id)) {
-        const arbeitSection = document.getElementById('arbeitSection');
-        if (arbeitSection) arbeitSection.classList.add('open');
-      }
-      
-      if (lebenSections.includes(id)) {
-        const lebenSection = document.getElementById('lebenSection');
-        if (lebenSection) lebenSection.classList.add('open');
-      }
-
-      // Style-Aktualisierung
+      // Style-Aktualisierung Hauptnavigation
       document.querySelectorAll('.btn').forEach(btn => btn.classList.remove('active-btn'));
+      // Nur die Hauptnavigation-Buttons bekommen .active-btn
+      if (event && event.target.parentElement.classList.contains('card')) {
+        event.target.classList.add('active-btn');
+      }
+    }
+
+    // Untermenü "Arbeit"
+    function showArbeitSub(id, event) {
+      // Schließe alle Sub-Sections
+      document.querySelectorAll('.arbeit-sub').forEach(sub => sub.classList.remove('open'));
+      // Öffne die gewünschte Sub-Section
+      const target = document.getElementById(id);
+      if (target) target.classList.add('open');
+
+      //
+      // Update Untermenü-Button-Styles
+      document.querySelectorAll('#arbeitSection .sub-btn').forEach(btn => btn.classList.remove('active-btn'));
       if (event) event.target.classList.add('active-btn');
     }
-  // Toast anzeigen, wenn mobile Kontakt-Button geklickt wird
-  document.addEventListener("DOMContentLoaded", function () {
-    const contactBtn = document.querySelector('.mobile-only');
-    const toast = document.getElementById('toast');
 
-    if (contactBtn && toast) {
-      contactBtn.addEventListener('click', function () {
-        toast.classList.add('show');
-        setTimeout(() => {
-          toast.classList.remove('show');
-        }, 2500);
-      });
-    }
-  });
-</script>
+    // Toast anzeigen, wenn mobile Kontakt-Button geklickt wird
+    document.addEventListener("DOMContentLoaded", function () {
+      const contactBtn = document.querySelector('.mobile-only');
+      const toast = document.getElementById('toast');
+
+      if (contactBtn && toast) {
+        contactBtn.addEventListener('click', function () {
+          toast.classList.add('show');
+          setTimeout(() => {
+            toast.classList.remove('show');
+          }, 2500);
+        });
+      }
+    });
+  </script>
 </body>
 </html>
